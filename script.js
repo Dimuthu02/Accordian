@@ -27,19 +27,23 @@ const data = [
 
 
 
-const accordionwrapprt = document.querySelector(".accordion");
+const accordionwrapper = document.querySelector(".accordion");
 
-function  accordionselector(){
-    accordionwrapprt.innerHTML=data.map((dataitem)=>{
-
-        return `<div class='accordion_item'>
-        <div class='accordion_title'>
-        <h3>${dataitem.question}</h3>
-        <i class="fa-solid fa-arrow-up"></i>
-        </div>
-        </div>
-        `
+function accordionselector() {
+  accordionwrapper.innerHTML = data.map((dataitem) => {
+      return `
+            <div class='accordion_item'>
+                <div class='accordion_title'>
+                    <h3>${dataitem.question}</h3>
+                    <i class="fa-solid fa-arrow-up"></i>
+                </div>
+                <div class="accordion_content">
+                    <p>${dataitem.answer}</p>
+                </div>
+            </div>
+        `;
     })
+    .join(""); 
 }
 
 accordionselector();
